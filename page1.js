@@ -12,7 +12,9 @@ async function init1() {
     .append("g")
     .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-  const data = await d3.csv("data.csv");
+  const data = await d3.csv(
+    "https://raw.githubusercontent.com/toskaushik/skd3project/master/data.csv"
+  );
   //const data = d3.csv("https://raw.githubusercontent.com/rajeevujain/DV/master/world.csv");
 
   data.forEach(function (d) {
