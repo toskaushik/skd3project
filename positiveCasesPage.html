@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <title>Positive cases percentage by age</title>
+  </head>
+
+  <body onload="pageOnload();">
+    <table style="width: 100%; border: 0px;" >
+      <tr style="border: 0px;">
+     
+        <td style="vertical-align: top;border: 0px;" colspan="2">
+          <img style="width: 100%; height: 80%;"
+          src="https://www.cdc.gov/coronavirus/2019-ncov/covid-data/images/COVIDView.jpg"
+          alt="COVIDView: A Surveillance Summary of U.S. COVID-19 Cases "
+        
+        />
+        </td>
+       
+      </tr>
+      <tr style="border: 0px;">
+        <td style="vertical-align: top;border: 0px;">
+          <div class="sidenav">
+            <a href="index.html">Home</a>
+            <a href="positiveCasesPage.html">Positive Cases</a>
+            <a href="edvisitPage.html">Ed Visits Percentage</a>
+            <a href="hospitalizationPage.html">Hospitalization</a>
+            <a href="mortalityPage.html">Mortality Percentage</a>
+          </div>
+        </td>
+        <td style="border: 0px;">
+          <div class="main">
+            <table style="width: 100%; border: 0px;" >
+              <tr style="border: 0px;">
+                <td style="border: 0px;" class="main">
+                  U.S. State and Local Public Health Laboratories Reporting to CDC
+                </td>
+                <td style="border: 0px;">
+                  <a href="edvisitPage.html"><b>Next>></b></a>
+                </td>
+              </tr>
+            </table>
+
+            
+            
+            <div class="PositivePageContent">
+              <p>
+                Nationally, the overall percentage of respiratory specimens testing
+                positive for SARS-CoV-2 decreased from week 28 (9.3%) to week 29
+                (8.6%) but increased in four regions. National percentages of
+                specimens testing positive for SARS-CoV-2 by type of laboratory:<br />
+                • Public health laboratories – increased from 7.5% during week 28 to
+                8.0% during week 29;<br />
+                • Clinical laboratories – decreased from 7.2% during week 28 to 5.7%
+                during week 29; <br />
+                • Commercial laboratories – decreased from 9.9% during week 28 to 9.1%
+                during week 29.
+                <br />
+                          Here is a graph for the covid 19 positive cases reported by various
+                laboratories in the US.It's describing the postive case percent based
+                on the age group per week since this pandemic started.
+              </p>
+            </div>
+            <table style="border: 0; width: 100%;">
+              <tr style="border: 0;">
+                <td style="border: 0; width: 75%;font-style: oblique;font-weight: bold;vertical-align: middle;">
+                  Weekly Percentage of Positive COVID-19 Cases by Age
+                  <div id="page1div"></div>
+                </td>
+                <td style="border: 0;width: 25%">
+                  <table style ="border: 0;">
+                    <tr>
+                      <td>
+                        Age group
+                      </td>
+                    </tr>
+                    <tr >
+                      <td><span
+                        class="legend"
+                        style="background-color: pink;"
+                        >0-4 Age</span</td>
+                    </tr>
+                    <tr><td>
+                      <span class="legend" style="background-color: blue;">5-17 Age</span>
+                    </td></tr>
+                    <tr>
+                      <td>
+                        <span class="legend" style="background-color: green;"
+                        >18-49 Age</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="legend" style="background-color: maroon;"
+                        >50-64 Age</span>
+                      </td>
+                    </tr>  
+                    
+                    <tr>
+                      <td>
+                        <span class="legend" style="background-color: red;">65+ Age</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="legend" style="background-color: brown;"
+                                  >Unknown Age</span
+                                >
+                      </td>
+                    </tr>
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+
+      </tr>
+    </table>
+        </tr>
+    </table>
+
+   
+    <script src="positiveCases.js"></script>
+  </body>
+</html>

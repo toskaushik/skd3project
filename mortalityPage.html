@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <title>Mortality percentage</title>
+  </head>
+
+  <body onload="pageOnload();">
+    <table style="width: 100%; border: 0px;" >
+      <tr style="border: 0px;">
+     
+        <td style="vertical-align: top;border: 0px;" colspan="2">
+          <img style="width: 100%; height: 80%;"
+          src="https://www.cdc.gov/coronavirus/2019-ncov/covid-data/images/COVIDView.jpg"
+          alt="COVIDView: A Surveillance Summary of U.S. COVID-19 Cases "
+        
+        />
+        </td>
+       
+      </tr>
+      <tr style="border: 0px;">
+        <td style="vertical-align: top;border: 0px;">
+          <div class="sidenav">
+            <a href="index.html">Home</a>
+            <a href="positiveCasesPage.html">Positive Cases</a>
+            <a href="edvisitPage.html">Ed Visits Percentage</a>
+            <a href="hospitalizationPage.html">Hospitalization</a>
+            <a href="mortalityPage.html">Mortality Percentage</a>
+            
+          </div>
+        </td>
+        <td style="border: 0px;">
+          <div class="main">
+            <table style="width: 100%; border: 0px;" >
+              <tr style="border: 0px;">
+                <td style="border: 0px;" class="main">
+                  Mortality Surveillance
+                </td>
+                <td style="border: 0px;">
+                  <a href="index.html"><b>Home</b></a>
+                </td>
+              </tr>
+            </table>
+    
+            <div class="PositivePageContent">
+              <p>
+                The National Center for Health Statistics (NCHS) collects death certificate data from vital statistics
+offices for all deaths occurring in the United States. Based on death certificate data available on July
+23, 2020, the percentage of deaths attributed to pneumonia, influenza or COVID-19 (PIC) increased
+from week 26 – week 28 (June 27 – July 11) after declining for 11 weeks since mid-April. The
+percentage of deaths due to PIC for week 29 is 9.1% and, while lower than the percentage during
+week 28 (11.5%), remains above the epidemic threshold. These percentages will likely change as
+more death certificates are processed.
+<br/>
+<br/>
+Weekly mortality surveillance data include a combination of machine coded and manually coded
+causes of death collected from death certificates. Percentages of deaths due to PIC are higher
+among manually coded records than more rapidly available machine coded records. Due to the
+additional time needed for manual coding, the initially reported PIC percentages may be lower than
+percentages calculated from final data.
+
+
+              </p>
+            </div>
+            <table style="border: 0; width: 100%;">
+              <tr style="border: 0;">
+                <td style="border: 0; width: 75%;font-style: oblique;font-weight: bold;vertical-align: middle;">
+NCHS Mortality Reporting System:Pnemonia , influenza and Covid 19 mortality data during pandemic
+                  <div id="page1div"></div>
+                </td>
+                <td style="border: 0;width: 25%">
+                  <table style ="border: 0;">
+                    <tr>
+                      <td>
+                        Mortality Type
+                      </td>
+                    </tr>
+                    <tr><td>
+                      <span class="legend" style="background-color: blue;">Epidemic Threshold</span>
+                    </td></tr>
+                    <tr>
+                      <td>
+                        <span class="legend" style="background-color: green;"
+                        >Seasonal Baseline</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="legend" style="background-color: red;">Pnemonia, Influenza or Covid-19</span>
+                      </td>
+                    </tr>
+                    
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+
+      </tr>
+    </table>
+        </tr>
+    </table>
+
+    <script src="mortality.js"></script>
+  </body>
+</html>

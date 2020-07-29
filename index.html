@@ -1,41 +1,156 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html>
   <head>
     <meta charset="utf-8" />
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <!-- Load d3-annotation -->
-    <title>Covid cases</title>
-    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
+    <title>Covid-19 cases</title>
   </head>
 
-  <body onload="init1();">
-    <div class="Heading">
-      <h1>Covid cases</h1>
-    </div>
-
-    <div class="MainContent">
-      <p>Description 1</p>
-      <p>Description 2</p>
-    </div>
-
-    <table>
-      <tr>
-        <td style="text-align: left;">
-          <a href="2.html" class="next">Next Page &raquo;</a>
+  <body onload="pageOnload();">
+    <table style="width: 100%; border: 0px;">
+      <tr style="border: 0px;">
+        <td style="vertical-align: top; border: 0px;" colspan="2">
+          <img
+            style="width: 100%; height: 80%;"
+            src="https://www.cdc.gov/coronavirus/2019-ncov/covid-data/images/COVIDView.jpg"
+            alt="COVIDView: A Surveillance Summary of U.S. COVID-19 Cases "
+          />
         </td>
       </tr>
-      <tr>
-        <td>
-          <p><u>Chart shows covid cases</u></p>
+      <tr style="border: 0px;">
+        <td style="vertical-align: top; border: 0px;">
+          <div class="sidenav">
+            <a href="index.html">Home</a>
+            <a href="positiveCasesPage.html">Positive Cases</a>
+            <a href="edvisitPage.html">Ed Visits Percentage</a>
+            <a href="hospitalizationPage.html">Hospitalization</a>
+            <a href="mortalityPage.html">Mortality Percentage</a>
+          </div>
         </td>
-      </tr>
+        <td style="border: 0px;">
+          <div class="main">
+            <table style="width: 100%; border: 0px;">
+              <tr style="border: 0px;">
+                <td style="border: 0px; text-align: right;">
+                  <a href="positiveCasesPage.html"><b>Next>></b></a>
+                </td>
+              </tr>
+            </table>
+            <div class="MainContent">
+              <p>
+                The COVID‑19 pandemic, also known as the coronavirus pandemic,
+                is an ongoing global pandemic of coronavirus disease 2019
+                (COVID‑19), caused by severe acute respiratory syndrome
+                coronavirus 2 (SARS‑CoV‑2).The outbreak was first identified in
+                December 2019 in Wuhan, China.The World Health Organization
+                declared the outbreak a Public Health Emergency of International
+                Concern on 30 January 2020 and a pandemic on 11 March. As of 26
+                July 2020, more than 16.1 million cases of COVID‑19 have been
+                reported in more than 188 countries and territories, resulting
+                in more than 645,000 deaths; more than 9.28 million people have
+                recovered.
+                <br />
+                <br />
+                The virus is primarily spread between people during close
+                contact, most often via small droplets produced by
+                coughing,sneezing, and talking. The droplets usually fall to the
+                ground or onto surfaces rather than travelling through air over
+                long distances. Transmission may also occur through smaller
+                droplets that are able to stay suspended in the air for longer
+                periods of time. Less commonly, people may become infected by
+                touching a contaminated surface and then touching their face. It
+                is most contagious during the first three days after the onset
+                of symptoms, although spread is possible before symptoms appear,
+                and from people who do not show symptoms.
+                <br /><br />
+                Common symptoms include fever, cough, fatigue, shortness of
+                breath, and loss of sense of smell. Complications may include
+                pneumonia and acute respiratory distress syndrome.The time from
+                exposure to onset of symptoms is typically around five days but
+                may range from two to fourteen days. There is no known vaccine
+                or specific antiviral treatment. Primary treatment is
+                symptomatic and supportive therapy. Recommended preventive
+                measures include hand washing, covering one's mouth when
+                coughing, maintaining distance from other people, wearing a face
+                mask in public settings, disinfecting surfaces, increasing
+                ventilation and air filtration indoors, and monitoring and
+                self-isolation for people who suspect they are infected.
+                Authorities worldwide have responded by implementing travel
+                restrictions, lockdowns, workplace hazard controls, and facility
+                closures. Many places have also worked to increase testing
+                capacity and trace contacts of infected persons.
+              </p>
+            </div>
+            <div class="Content2">Cases in the US</div>
+            <br />
+            <div class="Content1">
+              More than 4,163,892 people in the United States have been infected
+              with the coronavirus and at least 145,982 have died, according to
+              the CDC database. The number of new, confirmed cases across the
+              country has been at least 50,000 per day for most of the last
+              three weeks, as the virus surges in hot spots across the southern
+              and western United States.
+            </div>
 
-      <tr>
-        <td><div id="my_dataviz"></div></td>
+            <div class="Content2">Total Cases <span>4,163,892</span></div>
+            <br />
+            <div class="Content2">Total Deaths <span>145,982</span></div>
+            <br />
+            <br />
+            <div>
+              <table style="border: 0.8em;">
+                <tr>
+                  <td><b>Week's</b></td>
+                  <td>10</td>
+                  <td>11</td>
+                  <td>12</td>
+                  <td>13</td>
+                  <td>14</td>
+                  <td>15</td>
+                  <td>16</td>
+                  <td>17</td>
+                  <td>18</td>
+                  <td>19</td>
+                  <td>20</td>
+                  <td>21</td>
+                  <td>22</td>
+                  <td>23</td>
+                  <td>24</td>
+                  <td>25</td>
+                  <td>26</td>
+                  <td>27</td>
+                  <td>28</td>
+                  <td>29</td>
+                </tr>
+                <tr>
+                  <td><b>New Cases</b></td>
+                  <td>1612</td>
+                  <td>6081</td>
+                  <td>11543</td>
+                  <td>17742</td>
+                  <td>22335</td>
+                  <td>23451</td>
+                  <td>24063</td>
+                  <td>35122</td>
+                  <td>32225</td>
+                  <td>29599</td>
+                  <td>25789</td>
+                  <td>25002</td>
+                  <td>21851</td>
+                  <td>21346</td>
+                  <td>23036</td>
+                  <td>24869</td>
+                  <td>32000</td>
+                  <td>30409</td>
+                  <td>45619</td>
+                  <td>36691</td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </td>
       </tr>
     </table>
-
-    <script src="page1.js"></script>
   </body>
 </html>

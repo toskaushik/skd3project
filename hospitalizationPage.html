@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="main.css" />
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <title>Hospitalization percentage by age</title>
+  </head>
+
+  <body onload="pageOnload();">
+    <table style="width: 100%; border: 0px;" >
+      <tr style="border: 0px;">
+     
+        <td style="vertical-align: top;border: 0px;" colspan="2">
+          <img style="width: 100%; height: 80%;"
+          src="https://www.cdc.gov/coronavirus/2019-ncov/covid-data/images/COVIDView.jpg"
+          alt="COVIDView: A Surveillance Summary of U.S. COVID-19 Cases "
+        
+        />
+        </td>
+       
+      </tr>
+      <tr style="border: 0px;">
+        <td style="vertical-align: top;border: 0px;">
+          <div class="sidenav">
+            <a href="index.html">Home</a>
+            <a href="positiveCasesPage.html">Positive Cases</a>
+            <a href="edvisitPage.html">Ed Visits Percentage</a>
+            <a href="hospitalizationPage.html">Hospitalization</a>
+            <a href="mortalityPage.html">Mortality Percentage</a>
+            
+          </div>
+        </td>
+        <td style="border: 0px;">
+          <div class="main">
+            <table style="width: 100%; border: 0px;" >
+              <tr style="border: 0px;">
+                <td style="border: 0px;" class="main">
+                  Hospitalizations
+                </td>
+                <td style="border: 0px;">
+                  <a href="mortalityPage.html"><b>Next>></b></a>
+                </td>
+              </tr>
+            </table>
+            
+            
+            <div class="PositivePageContent">
+              <p>
+                The COVID-19-Associated Hospitalization Surveillance Network (COVID-NET) conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in select counties participating in the Emerging Infections Program (EIP) and the Influenza Hospitalization Surveillance Project (IHSP).
+
+A total of 39,432 laboratory-confirmed COVID-19-associated hospitalizations were reported by sites between March 1, 2020 and July 18, 2020. The overall cumulative hospitalization rate is 120.9 per 100,000 population. 
+<br/>
+<br/>
+Among the 0-4 years, 5-17 years, 18-49 years, 50-64 years, and ≥ 65 years age groups, the highest rate of hospitalization is among adults aged ≥ 65, followed by adults aged 50-64 years and adults aged 18-49 years.
+
+
+              </p>
+            </div>
+            <table style="border: 0; width: 100%;">
+              <tr style="border: 0;">
+                <td style="border: 0; width: 75%;font-style: oblique;font-weight: bold;vertical-align: middle;">
+                  COVID-19-Associated Hospitalization Rates (per 100,000 population) for the COVID-NET Network
+                  <div id="page1div"></div>
+                </td>
+                <td style="border: 0;width: 25%">
+                  <table style ="border: 0;">
+                    <tr>
+                      <td>
+                        Age group
+                      </td>
+                    </tr>
+                    <tr >
+                      <td><span
+                        class="legend"
+                        style="background-color: pink;"
+                        >0-4 Age</span</td>
+                    </tr>
+                    <tr><td>
+                      <span class="legend" style="background-color: blue;">5-17 Age</span>
+                    </td></tr>
+                    <tr>
+                      <td>
+                        <span class="legend" style="background-color: green;"
+                        >18-49 Age</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <span class="legend" style="background-color: maroon;"
+                        >50-64 Age</span>
+                      </td>
+                    </tr>  
+                    <tr>
+                      <td>
+                        <span class="legend" style="background-color: red;">65+ Age</span>
+                      </td>
+                    </tr>
+      
+                  </table>
+                </td>
+              </tr>
+            </table>
+          </div>
+        </td>
+
+      </tr>
+    </table>
+        </tr>
+    </table>
+
+    <script src="hospitalization.js"></script>
+  </body>
+</html>
