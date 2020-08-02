@@ -138,7 +138,7 @@ async function pageOnload() {
     .on("mouseover", function (d) {
       div.transition().duration(200).style("opacity", 0.9);
       div
-        .html("Week 2020/" + d.week + "<br/>" + "Percentage " + d.count + "%")
+        .html("Week 2020/" + d.week + "<br/>" + "Percentage " + d.value + "%")
         .style("left", d3.event.pageX + "px")
         .style("top", d3.event.pageY - 28 + "px");
     })
