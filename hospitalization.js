@@ -137,7 +137,7 @@ async function pageOnload() {
     );
   svg
     .selectAll("dot")
-    .data([age65])
+    .data(age65)
     .enter()
     .append("circle")
     .attr("r", 5)
