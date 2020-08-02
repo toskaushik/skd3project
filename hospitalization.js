@@ -119,7 +119,7 @@ async function pageOnload() {
           return y(d.value);
         })
     );
-  svg
+  var a65 = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([age65])
@@ -135,7 +135,7 @@ async function pageOnload() {
           return y(d.value);
         })
     );
-  svg
+  var t65 = svg
     .selectAll("dot")
     .data(age65)
     .enter()
