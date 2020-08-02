@@ -52,7 +52,7 @@ async function pageOnload() {
     .style("text-anchor", "middle")
     .text("Hospitalization percentage by Population");
 
-  svg
+  var a0 = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([age04])
@@ -69,7 +69,7 @@ async function pageOnload() {
         })
     );
 
-  svg
+  var a5 = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([age517])
@@ -86,7 +86,7 @@ async function pageOnload() {
         })
     );
 
-  svg
+  var a18 = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([age1849])
@@ -103,7 +103,7 @@ async function pageOnload() {
         })
     );
 
-  svg
+  var a50 = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([age5064])
@@ -138,6 +138,84 @@ async function pageOnload() {
   var t65 = svg
     .selectAll("dot")
     .data(age65)
+    .enter()
+    .append("circle")
+    .attr("r", 5)
+    .attr("transform", function (d) {
+      return "translate(" + x(+d.week + 0.3) + " ," + y(d.value) + ")";
+    })
+    .on("mouseover", function (d) {
+      div.transition().duration(200).style("opacity", 0.9);
+      div
+        .html("Week 2020/" + d.week + "<br/>" + "Percentage " + d.value + "%")
+        .style("left", d3.event.pageX + "px")
+        .style("top", d3.event.pageY - 28 + "px");
+    })
+    .on("mouseout", function (d) {
+      div.transition().duration(500).style("opacity", 0);
+    });
+  var t50 = svg
+    .selectAll("dot")
+    .data(age5064)
+    .enter()
+    .append("circle")
+    .attr("r", 5)
+    .attr("transform", function (d) {
+      return "translate(" + x(+d.week + 0.3) + " ," + y(d.value) + ")";
+    })
+    .on("mouseover", function (d) {
+      div.transition().duration(200).style("opacity", 0.9);
+      div
+        .html("Week 2020/" + d.week + "<br/>" + "Percentage " + d.value + "%")
+        .style("left", d3.event.pageX + "px")
+        .style("top", d3.event.pageY - 28 + "px");
+    })
+    .on("mouseout", function (d) {
+      div.transition().duration(500).style("opacity", 0);
+    });
+
+  var t18 = svg
+    .selectAll("dot")
+    .data(age1849)
+    .enter()
+    .append("circle")
+    .attr("r", 5)
+    .attr("transform", function (d) {
+      return "translate(" + x(+d.week + 0.3) + " ," + y(d.value) + ")";
+    })
+    .on("mouseover", function (d) {
+      div.transition().duration(200).style("opacity", 0.9);
+      div
+        .html("Week 2020/" + d.week + "<br/>" + "Percentage " + d.value + "%")
+        .style("left", d3.event.pageX + "px")
+        .style("top", d3.event.pageY - 28 + "px");
+    })
+    .on("mouseout", function (d) {
+      div.transition().duration(500).style("opacity", 0);
+    });
+  var t5 = svg
+    .selectAll("dot")
+    .data(age517)
+    .enter()
+    .append("circle")
+    .attr("r", 5)
+    .attr("transform", function (d) {
+      return "translate(" + x(+d.week + 0.3) + " ," + y(d.value) + ")";
+    })
+    .on("mouseover", function (d) {
+      div.transition().duration(200).style("opacity", 0.9);
+      div
+        .html("Week 2020/" + d.week + "<br/>" + "Percentage " + d.value + "%")
+        .style("left", d3.event.pageX + "px")
+        .style("top", d3.event.pageY - 28 + "px");
+    })
+    .on("mouseout", function (d) {
+      div.transition().duration(500).style("opacity", 0);
+    });
+
+  var t0 = svg
+    .selectAll("dot")
+    .data(age04)
     .enter()
     .append("circle")
     .attr("r", 5)
