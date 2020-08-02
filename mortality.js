@@ -97,10 +97,9 @@ async function pageOnload() {
     {
       note: {
         label: "Pick mortality of Pnemonia, Influenza or Covid-19",
-        //title: "Annotation title",
-        //align: "middle",  // try right or left
-        wrap: 200, // try something smaller to see text split in several lines
-        padding: 10, // More = text lower
+        align: "middle",
+        wrap: 200,
+        padding: 10,
       },
       color: ["black"],
       x: width / 2 - 121,

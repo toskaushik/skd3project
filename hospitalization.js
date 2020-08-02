@@ -20,6 +20,13 @@ async function pageOnload() {
   const age5064 = await d3.csv("50-64age.csv");
   const age65 = await d3.csv("65+age.csv");
 
+  // Define the div for the tooltip
+  var div = d3
+    .select("body")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
   svg
     .append("g")
     .attr("transform", "translate(10," + height + ")")
@@ -127,5 +134,15 @@ async function pageOnload() {
         .y(function (d) {
           return y(d.value);
         })
-    );
+    )
+    .on("mouseover", function (d) {
+      div.transition().duration(200).style("opacity", 0.9);
+      div
+        .html("Week 2020/" + d.week + "<br/>" + "Percentage " + d.count + "%")
+        .style("left", d3.event.pageX + "px")
+        .style("top", d3.event.pageY - 28 + "px");
+    })
+    .on("mouseout", function (d) {
+      div.transition().duration(500).style("opacity", 0);
+    });
 }
