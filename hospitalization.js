@@ -49,7 +49,7 @@ async function pageOnload() {
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([age04])
-    .attr("stroke", "pink")
+    .attr("stroke", "purple")
     .attr(
       "d",
       d3
@@ -116,7 +116,7 @@ async function pageOnload() {
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([age65])
-    .attr("stroke", "red")
+    .attr("stroke", "fuchsia")
     .attr(
       "d",
       d3

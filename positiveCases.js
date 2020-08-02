@@ -22,12 +22,185 @@ async function pageOnload() {
   const unknown = await d3.csv("unknownAgePos.csv");
 
   // Define the div for the tooltip
-  var div = d3
-    .select("body")
-    .append("div")
-    .attr("class", "tooltip")
-    .style("opacity", 0);
+  // var div = d3
+  //   .select("body")
+  //   .append("div")
+  //   .attr("class", "tooltip")
+  //   .style("opacity", 0);
 
+  const ddlData = [
+    "All Records",
+    "0-4 Age",
+    "5-17 Age",
+    "18-49 Age",
+    "50-64 Age",
+    "65+ Age",
+    "Total",
+  ];
+
+  d3.select("#ddl").on("change", function (d) {
+    var selectedOption = d3.select(this).property("value");
+    update(selectedOption);
+  });
+  function update(selectedItem) {
+    if (selectedItem == "0-4 Age") {
+      iage04 = age04;
+      iage517 = [];
+      iage1849 = [];
+      iage5064 = [];
+      iage65 = [];
+      iunknown = [];
+    } else if (selectedItem == "5-17 Age") {
+      iage04 = [];
+      iage517 = age517;
+      iage1849 = [];
+      iage5064 = [];
+      iage65 = [];
+      iunknown = [];
+    } else if (selectedItem == "5-17 Age") {
+      iage04 = [];
+      iage517 = [];
+      iage1849 = age1849;
+      iage5064 = [];
+      iage65 = [];
+      iunknown = [];
+    } else if (selectedItem == "18-49 Age") {
+      iage04 = [];
+      iage517 = [];
+      iage1849 = age1849;
+      iage5064 = [];
+      iage65 = [];
+      iunknown = [];
+    } else if (selectedItem == "50-64 Age") {
+      iage04 = [];
+      iage517 = [];
+      iage1849 = [];
+      iage5064 = age5064;
+      iage65 = [];
+      iunknown = [];
+    } else if (selectedItem == "65+ Age") {
+      iage04 = [];
+      iage517 = [];
+      iage1849 = [];
+      iage5064 = [];
+      iage65 = age65;
+      iunknown = [];
+    } else if (selectedItem == "Total") {
+      iage04 = [];
+      iage517 = [];
+      iage1849 = [];
+      iage5064 = [];
+      iage65 = [];
+      iunknown = unknown;
+    } else {
+      iage04 = age04;
+      iage517 = age517;
+      iage1849 = age1849;
+      iage5064 = age5064;
+      iage65 = age65;
+      iunknown = unknown;
+    }
+
+    a04
+      .data([iage04])
+      .attr("stroke", "purple")
+      .attr(
+        "d",
+        d3
+          .line()
+          .x(function (d) {
+            return x(d.week);
+          })
+          .y(function (d) {
+            return y(d.value);
+          })
+      );
+
+    a17
+      .data([iage517])
+      .attr("stroke", "blue")
+      .attr(
+        "d",
+        d3
+          .line()
+          .x(function (d) {
+            return x(d.week);
+          })
+          .y(function (d) {
+            return y(d.value);
+          })
+      );
+
+    a18
+      .data([iage1849])
+      .attr("stroke", "green")
+      .attr(
+        "d",
+        d3
+          .line()
+          .x(function (d) {
+            return x(d.week);
+          })
+          .y(function (d) {
+            return y(d.value);
+          })
+      );
+
+    a50
+      .data([iage5064])
+      .attr("stroke", "maroon")
+      .attr(
+        "d",
+        d3
+          .line()
+          .x(function (d) {
+            return x(d.week);
+          })
+          .y(function (d) {
+            return y(d.value);
+          })
+      );
+
+    aunknown
+      .data([iunknown])
+      .attr("stroke", "orange")
+      .attr(
+        "d",
+        d3
+          .line()
+          .x(function (d) {
+            return x(d.week);
+          })
+          .y(function (d) {
+            return y(d.value);
+          })
+      );
+    a65
+      .data([iage65])
+      .attr("stroke", "fuchsia")
+      .attr(
+        "d",
+        d3
+          .line()
+          .x(function (d) {
+            return x(d.week);
+          })
+          .y(function (d) {
+            return y(d.value);
+          })
+      );
+  }
+  d3.select("#ddl")
+    .selectAll("myOptions")
+    .data(ddlData)
+    .enter()
+    .append("option")
+    .text(function (d) {
+      return d;
+    }) // text showed in the menu
+    .attr("value", function (d) {
+      return d;
+    });
   svg
     .append("g")
     .attr("transform", "translate(10," + height + ")")
@@ -59,11 +232,11 @@ async function pageOnload() {
     .attr("class", "grid")
     .call(d3.axisLeft(y).tickFormat(""));
 
-  svg
+  var a04 = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([age04])
-    .attr("stroke", "pink")
+    .attr("stroke", "purple")
     .attr(
       "d",
       d3
@@ -76,7 +249,7 @@ async function pageOnload() {
         })
     );
 
-  svg
+  var a17 = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([age517])
@@ -93,7 +266,7 @@ async function pageOnload() {
         })
     );
 
-  svg
+  var a18 = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([age1849])
@@ -110,7 +283,7 @@ async function pageOnload() {
         })
     );
 
-  svg
+  var a50 = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([age5064])
@@ -127,11 +300,11 @@ async function pageOnload() {
         })
     );
 
-  svg
+  var aunknown = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([unknown])
-    .attr("stroke", "brown")
+    .attr("stroke", "orange")
     .attr(
       "d",
       d3
@@ -143,11 +316,11 @@ async function pageOnload() {
           return y(d.value);
         })
     );
-  svg
+  var a65 = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([age65])
-    .attr("stroke", "red")
+    .attr("stroke", "fuchsia")
     .attr(
       "d",
       d3
@@ -159,29 +332,29 @@ async function pageOnload() {
           return y(d.value);
         })
     );
-  svg
-    .selectAll("dot")
-    .data(age65)
-    .enter()
-    .append("circle")
-    .attr("r", 5)
-    .attr("transform", function (d) {
-      return "translate(" + x(+d.week + 0.3) + " ," + y(d.value) + ")";
-    })
-    // .attr("cx", function (d) {
-    //   return x(d.week);
-    // })
-    // .attr("cy", function (d) {
-    //   return y(d.value);
-    // })
-    .on("mouseover", function (d) {
-      div.transition().duration(200).style("opacity", 0.9);
-      div
-        .html(d.week + "<br/>" + d.value)
-        .style("left", d3.event.pageX + "px")
-        .style("top", d3.event.pageY - 28 + "px");
-    })
-    .on("mouseout", function (d) {
-      div.transition().duration(500).style("opacity", 0);
-    });
+  // svg
+  //   .selectAll("dot")
+  //   .data(age65)
+  //   .enter()
+  //   .append("circle")
+  //   .attr("r", 5)
+  //   .attr("transform", function (d) {
+  //     return "translate(" + x(+d.week + 0.3) + " ," + y(d.value) + ")";
+  //   })
+  //   // .attr("cx", function (d) {
+  //   //   return x(d.week);
+  //   // })
+  //   // .attr("cy", function (d) {
+  //   //   return y(d.value);
+  //   // })
+  //   .on("mouseover", function (d) {
+  //     div.transition().duration(200).style("opacity", 0.9);
+  //     div
+  //       .html(d.week + "<br/>" + d.value)
+  //       .style("left", d3.event.pageX + "px")
+  //       .style("top", d3.event.pageY - 28 + "px");
+  //   })
+  //   .on("mouseout", function (d) {
+  //     div.transition().duration(500).style("opacity", 0);
+  //   });
 }

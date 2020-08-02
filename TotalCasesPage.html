@@ -4,7 +4,8 @@
     <meta charset="utf-8" />
     <link rel="stylesheet" type="text/css" href="main.css" />
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    <title>Hospitalization percentage by age</title>
+    <title>Positive cases percentage by age</title>
+    <script src="https://rawgit.com/susielu/d3-annotation/master/d3-annotation.min.js"></script>
   </head>
 
   <body onload="pageOnload();">
@@ -26,10 +27,9 @@
             <a href="index.html">Home</a>
             <a href="TotalCasesPage.html">Total Testing</a>
             <a href="positiveCasesPage.html">Positive Cases</a>
-            <a href="edvisitPage.html">Ed Visits</a>
+            <a href="edvisitPage.html">Ed Visits </a>
             <a href="hospitalizationPage.html">Hospitalization</a>
-            <a href="mortalityPage.html">Mortality</a>
-            
+            <a href="mortalityPage.html">Mortality </a>
           </div>
         </td>
         <td style="border: 0px;">
@@ -37,68 +37,58 @@
             <table style="width: 100%; border: 0px;" >
               <tr style="border: 0px;">
                 <td style="border: 0px;" class="main">
-                  Hospitalizations
+                  U.S. State and Local Public Health Laboratories Reporting to CDC
                 </td>
                 <td style="border: 0px;">
-                  <a href="mortalityPage.html"><b>Mortality>></b></a>
+                 
+                  <a href="edvisitPage.html"><b>Positive Cases>></b></a>
                 </td>
               </tr>
             </table>
+
             
             
             <div class="PositivePageContent">
               <p>
-                The COVID-19-Associated Hospitalization Surveillance Network (COVID-NET) conducts population-based surveillance for laboratory-confirmed COVID-19-associated hospitalizations in select counties participating in the Emerging Infections Program (EIP) and the Influenza Hospitalization Surveillance Project (IHSP).
-
-A total of 39,432 laboratory-confirmed COVID-19-associated hospitalizations were reported by sites between March 1, 2020 and July 18, 2020. The overall cumulative hospitalization rate is 120.9 per 100,000 population. 
-<br/>
-<br/>
-Among the 0-4 years, 5-17 years, 18-49 years, 50-64 years, and ≥ 65 years age groups, the highest rate of hospitalization is among adults aged ≥ 65, followed by adults aged 50-64 years and adults aged 18-49 years.
-
-
+                Nationally, the overall percentage of respiratory specimens testing
+                positive for SARS-CoV-2 decreased from week 28 (9.3%) to week 29
+                (8.6%) but increased in four regions. National percentages of
+                specimens testing positive for SARS-CoV-2 by type of laboratory:<br />
+                • Public health laboratories – increased from 7.5% during week 28 to
+                8.0% during week 29;<br />
+                • Clinical laboratories – decreased from 7.2% during week 28 to 5.7%
+                during week 29; <br />
+                • Commercial laboratories – decreased from 9.9% during week 28 to 9.1%
+                during week 29.
+                <br /><br/>
+                          Here is a graph for the covid 19 positive cases reported by various
+                laboratories in the US, And total cases performed by different laboratories.
               </p>
             </div>
             <table style="border: 0; width: 100%;">
               <tr style="border: 0;">
                 <td style="border: 0; width: 75%;font-style: oblique;font-weight: bold;vertical-align: middle;">
-                  COVID-19-Associated Hospitalization Rates (per 100,000 population) for the COVID-NET Network
+                  Weekly Positive COVID-19 Cases and  Total number of testing performed
+                                    <select id="ddl"></select>
                   <div id="page1div"></div>
                 </td>
                 <td style="border: 0;width: 25%">
                   <table style ="border: 0;">
                     <tr>
                       <td>
-                        Age group
+                        Result
                       </td>
                     </tr>
-                    <tr >
-                      <td style="background-color: purple;"><span
-                        class="legend"
-                        
-                        >0-4 Age</span</td>
-                    </tr>
-                    <tr><td style="background-color: blue;">
-                      <span class="legend" >5-17 Age</span>
+                       <tr><td style="background-color: orange;">
+                      <span class="legend" >Number of Test</span>
                     </td></tr>
                     <tr>
-                      <td style="background-color: green;">
-                        <span class="legend" 
-                        >18-49 Age</span>
+                      <td style="background-color: red;">
+                        <span class="legend" style="background-color: red;"
+                        >Number of +ve cases</span>
                       </td>
                     </tr>
-                    <tr>
-                      <td style="background-color: maroon;">
-                        <span class="legend" 
-                        >50-64 Age</span>
-                      </td>
-                    </tr>  
-                    
-                    <tr>
-                      <td style="background-color: fuchsia">
-                        <span class="legend" >65+ Age</span>
-                      </td>
-                    </tr>
-      
+                   
                   </table>
                 </td>
               </tr>
@@ -111,6 +101,7 @@ Among the 0-4 years, 5-17 years, 18-49 years, 50-64 years, and ≥ 65 years age 
         </tr>
     </table>
 
-    <script src="hospitalization.js"></script>
+   
+    <script src="totalCases.js"></script>
   </body>
 </html>

@@ -64,7 +64,7 @@ async function pageOnload() {
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([dataTreshold])
-    .attr("stroke", "blue")
+    .attr("stroke", "sandybrown")
     .attr(
       "d",
       d3
@@ -81,7 +81,7 @@ async function pageOnload() {
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([dataBaseline])
-    .attr("stroke", "green")
+    .attr("stroke", "skyblue")
     .attr(
       "d",
       d3
@@ -93,4 +93,23 @@ async function pageOnload() {
           return y(d.value);
         })
     );
+  const annotations = [
+    {
+      note: {
+        label: "Pick mortality of Pnemonia, Influenza or Covid-19",
+        //title: "Annotation title",
+        //align: "middle",  // try right or left
+        wrap: 200, // try something smaller to see text split in several lines
+        padding: 10, // More = text lower
+      },
+      color: ["black"],
+      x: width / 2 - 121,
+      y: height / 2 - 120,
+      dy: 50,
+      dx: 50,
+    },
+  ];
+
+  //  const makeAnnotations = d3.annotation().annotations(annotations);
+  svg.append("g").call(d3.annotation().annotations(annotations));
 }

@@ -24,10 +24,11 @@
         <td style="vertical-align: top;border: 0px;">
           <div class="sidenav">
             <a href="index.html">Home</a>
+            <a href="TotalCasesPage.html">Total Testing</a>
             <a href="positiveCasesPage.html">Positive Cases</a>
-            <a href="edvisitPage.html">Ed Visits Percentage</a>
+            <a href="edvisitPage.html">Ed Visits </a>
             <a href="hospitalizationPage.html">Hospitalization</a>
-            <a href="mortalityPage.html">Mortality Percentage</a>
+            <a href="mortalityPage.html">Mortality </a>
           </div>
         </td>
         <td style="border: 0px;">
@@ -38,7 +39,7 @@
                   U.S. State and Local Public Health Laboratories Reporting to CDC
                 </td>
                 <td style="border: 0px;">
-                  <a href="edvisitPage.html"><b>Next>></b></a>
+                  <a href="edvisitPage.html"><b>ED Visits>></b></a>
                 </td>
               </tr>
             </table>
@@ -47,18 +48,15 @@
             
             <div class="PositivePageContent">
               <p>
-                Nationally, the overall percentage of respiratory specimens testing
-                positive for SARS-CoV-2 decreased from week 28 (9.3%) to week 29
-                (8.6%) but increased in four regions. National percentages of
-                specimens testing positive for SARS-CoV-2 by type of laboratory:<br />
-                • Public health laboratories – increased from 7.5% during week 28 to
-                8.0% during week 29;<br />
-                • Clinical laboratories – decreased from 7.2% during week 28 to 5.7%
-                during week 29; <br />
-                • Commercial laboratories – decreased from 9.9% during week 28 to 9.1%
-                during week 29.
-                <br />
-                          Here is a graph for the covid 19 positive cases reported by various
+                Tests for COVID-19
+                Viral tests tell you if you currently have an infection with SARS-CoV-2, the virus that causes COVID-19. A positive test result means you have an infection.
+                <br/>
+                Antibody blood tests, also called antibody tests, check your blood by looking for antibodies, which show if you had a previous infection with the virus.
+                 <br /><br/>
+                These data are compiled from a number of sources. Not all tests are reported to CDC.
+                The number of positive tests in a state is not equal to the number of cases, as one person may be tested more than once.
+                <br/>
+                Here is a graph for the covid 19 positive cases reported by various
                 laboratories in the US.It's describing the postive case percent based
                 on the age group per week since this pandemic started.
               </p>
@@ -66,7 +64,8 @@
             <table style="border: 0; width: 100%;">
               <tr style="border: 0;">
                 <td style="border: 0; width: 75%;font-style: oblique;font-weight: bold;vertical-align: middle;">
-                  Weekly Percentage of Positive COVID-19 Cases by Age
+                    Weekly Percentage of Positive COVID-19 Cases by Age
+                  <select id="ddl"></select>
                   <div id="page1div"></div>
                 </td>
                 <td style="border: 0;width: 25%">
@@ -76,40 +75,41 @@
                         Age group
                       </td>
                     </tr>
+                    <tr>
+                      <td style="background-color: orange;">
+                        <span class="legend" 
+                                  >All </span
+                                >
+                      </td>
+                    </tr>
                     <tr >
-                      <td><span
+                      <td style="background-color: purple;"><span
                         class="legend"
-                        style="background-color: pink;"
+                        
                         >0-4 Age</span</td>
                     </tr>
-                    <tr><td>
-                      <span class="legend" style="background-color: blue;">5-17 Age</span>
+                    <tr><td style="background-color: blue;">
+                      <span class="legend" >5-17 Age</span>
                     </td></tr>
                     <tr>
-                      <td>
-                        <span class="legend" style="background-color: green;"
+                      <td style="background-color: green;">
+                        <span class="legend" 
                         >18-49 Age</span>
                       </td>
                     </tr>
                     <tr>
-                      <td>
-                        <span class="legend" style="background-color: maroon;"
+                      <td style="background-color: maroon;">
+                        <span class="legend" 
                         >50-64 Age</span>
                       </td>
                     </tr>  
                     
                     <tr>
-                      <td>
-                        <span class="legend" style="background-color: red;">65+ Age</span>
+                      <td style="background-color: fuchsia">
+                        <span class="legend" >65+ Age</span>
                       </td>
                     </tr>
-                    <tr>
-                      <td>
-                        <span class="legend" style="background-color: brown;"
-                                  >Unknown Age</span
-                                >
-                      </td>
-                    </tr>
+                
                   </table>
                 </td>
               </tr>

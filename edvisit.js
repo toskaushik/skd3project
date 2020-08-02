@@ -17,6 +17,13 @@ async function pageOnload() {
   const data = await d3.csv("edvisit1.csv");
   const dataili = await d3.csv("edvisit2.csv");
 
+  // Define the div for the tooltip
+  var div = d3
+    .select("body")
+    .append("div")
+    .attr("class", "tooltip")
+    .style("opacity", 0);
+
   svg
     .append("g")
     .attr("transform", "translate(10," + height + ")")
@@ -42,7 +49,7 @@ async function pageOnload() {
     .style("text-anchor", "middle")
     .text("Percentage of visits");
 
-  svg
+  var covid = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([data])
@@ -59,11 +66,11 @@ async function pageOnload() {
         })
     );
 
-  svg
+  var influ = svg
     .append("path")
     .attr("transform", "translate(10,0 )")
     .data([dataili])
-    .attr("stroke", "blue")
+    .attr("stroke", "teal")
     .attr(
       "d",
       d3
@@ -75,4 +82,42 @@ async function pageOnload() {
           return y(d.count);
         })
     );
+  var covidt = svg
+    .selectAll("dot")
+    .data(data)
+    .enter()
+    .append("circle")
+    .attr("r", 5)
+    .attr("transform", function (d) {
+      return "translate(" + x(+d.week + 0.3) + " ," + y(d.count) + ")";
+    })
+    .on("mouseover", function (d) {
+      div.transition().duration(200).style("opacity", 0.9);
+      div
+        .html("Week 2020/" + d.week + "<br/>" + "Percentage " + d.count + "%")
+        .style("left", d3.event.pageX + "px")
+        .style("top", d3.event.pageY - 28 + "px");
+    })
+    .on("mouseout", function (d) {
+      div.transition().duration(500).style("opacity", 0);
+    });
+  var covidilit = svg
+    .selectAll("dot")
+    .data(dataili)
+    .enter()
+    .append("circle")
+    .attr("r", 5)
+    .attr("transform", function (d) {
+      return "translate(" + x(+d.week + 0.3) + " ," + y(d.count) + ")";
+    })
+    .on("mouseover", function (d) {
+      div.transition().duration(200).style("opacity", 0.9);
+      div
+        .html("Week 2020/" + d.week + "<br/>" + "Percentage " + d.count + "%")
+        .style("left", d3.event.pageX + "px")
+        .style("top", d3.event.pageY - 28 + "px");
+    })
+    .on("mouseout", function (d) {
+      div.transition().duration(500).style("opacity", 0);
+    });
 }
